@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_VARIABLE } from '../util';
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +51,7 @@ const AddProduct = () => {
       formDataForUpload.append('offers', formData.offers);
       formDataForUpload.append('image', formData.image);
 
-      const response = await fetch('http://localhost:4000/product/add-product', {
+      const response = await fetch(`${API_VARIABLE}/product/add-product`, {
         method: 'POST',
         headers: {
           'token': `${token}`,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import SideBar from './SideBar';
+import { API_VARIABLE } from '../util';
 
 const FirmProducts = () => {
   const { vendorId } = useParams();
@@ -9,7 +10,7 @@ const FirmProducts = () => {
   useEffect(() => {
     const fetchVendorDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/vendor/details/${vendorId}`);
+        const response = await fetch(`${API_VARIABLE}/vendor/details/${vendorId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch vendor details');
         }
@@ -63,7 +64,7 @@ const FirmProducts = () => {
               <td>{product.description}</td>
               <td>{product.price}</td>
               <td>{product.discount}</td>
-              <td><img src={`http://localhost:4000/uploads/${product.image}`} alt={product.name} className="product-image" /></td>
+              <td><img src={`${API_VARIABLE}/uploads/${product.image}`} alt={product.name} className="product-image" /></td>
               <td>{product.serves}</td>
               <td>{product.quantity}</td>
               <td>{product.timing}</td>

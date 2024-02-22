@@ -1,0 +1,1 @@
+export const API_VARIABLE = "https://react-swiggy-clone-dashboard.vercel.app/"

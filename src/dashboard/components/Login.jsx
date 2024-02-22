@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_VARIABLE } from '../util';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:4000/vendor/login', {
+      const response = await fetch(`${API_VARIABLE}/vendor/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

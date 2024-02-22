@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_VARIABLE } from '../util';
 
 const FirmReg = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const FirmReg = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:4000/firm/add-firm', {
+      const response = await fetch(`${API_VARIABLE}/firm/add-firm`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
